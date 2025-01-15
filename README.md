@@ -32,7 +32,7 @@ A Python program with Tkinter GUI that converts numbers between text and numeric
 4. Run The Program:
   Using the following command after navigating to the project folder:
     ```bash
-      py number_converter.py
+      py NumConverterGUI.py
     ```
 
 ## __4. Usage__
