@@ -99,7 +99,7 @@ class Application(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Nate's Number Converter") #sets title of the window.
-        self.geometry("400x300") #sets the size of the window.
+        self.geometry("500x500") #sets the size of the window.
         self.text_to_number = TextToNumber()
 
         # Get the path to the icon file, handles both normal and bundled versions.
@@ -122,8 +122,11 @@ class Application(tk.Tk):
 #Created the widgets with the text to number and number to text conversion within our GUI.
     def create_widgets(self):
         # Text to Number Conversion labels and buttons.
-        self.label1 = tk.Label(self, text="Enter number in text (Example: Five):")
-        self.label1.pack(pady=10)
+        self.label1 = tk.Label(self, text="Enter number in text:")
+        self.label1.pack(pady=6)
+        
+        self.label1 = tk.Label(self, text="(Example: Five)")
+        self.label1.pack(pady=2)
 
         self.text_input = tk.Entry(self, width=30)
         self.text_input.pack(pady=10)
@@ -131,12 +134,23 @@ class Application(tk.Tk):
         self.convert_text_button = tk.Button(self, text="Convert to Number", command=self.convert_text_to_number)
         self.convert_text_button.pack(pady=10)
 
+        # Line above the result label
+        self.line1 = tk.Label(self, text="-" * 50)
+        self.line1.pack(pady=5)
+
         self.result_label = tk.Label(self, text="Converted Result Will Appear Here.")
         self.result_label.pack(pady=10)
 
+        # Line below the result label
+        self.line2 = tk.Label(self, text="-" * 50)
+        self.line2.pack(pady=5)
+
         # Number to Text Conversion labels and buttons.
-        self.label2 = tk.Label(self, text="Enter number to convert to text (Example: 5):")
-        self.label2.pack(pady=10)
+        self.label2 = tk.Label(self, text="Enter number to convert to text:")
+        self.label2.pack(pady=6)
+
+        self.label2 = tk.Label(self, text="(Example: 5)")
+        self.label2.pack(pady=2)
 
         self.number_input = tk.Entry(self, width=30)
         self.number_input.pack(pady=10)
@@ -144,12 +158,16 @@ class Application(tk.Tk):
         self.convert_number_button = tk.Button(self, text="Convert to Text", command=self.convert_number_to_text)
         self.convert_number_button.pack(pady=10)
 
+        # Label at the bottom center
+        self.author_label = tk.Label(self, text="Written by: Nathan Dubeau")
+        self.author_label.pack(side=tk.BOTTOM, pady=10)
+
 #functions to parse the data or display an error message if the data is invalid.
     def convert_text_to_number(self):
         text = self.text_input.get().strip()
         try:
             number = self.text_to_number.parse(text)
-            self.result_label.config(text=f"Number: {number}")
+            self.result_label.config(text=f"Numerical Version: {number}")
         except Exception as e:
             messagebox.showerror("Error! [01]", f"Could not parse '{text}'. Please enter a valid number in text format. Such as [Five]")
 
@@ -157,7 +175,7 @@ class Application(tk.Tk):
         try:
             number = int(self.number_input.get().strip())
             text = self.text_to_number.number_to_text(number)
-            self.result_label.config(text=f"Text: {text}")
+            self.result_label.config(text=f"Text Version: {text}")
         except ValueError:
             messagebox.showerror("Error! [02]", "Invalid number. Please enter a valid number such as [5].")
 
