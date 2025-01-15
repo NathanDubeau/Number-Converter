@@ -1,12 +1,23 @@
 # Number-Converter
 A Python program with Tkinter GUI that converts numbers between text and numeric form. Users can input a number in text (ex. "six hundred and twenty") or numeric form (ex. "620"), and the program converts it to the opposite format. Demonstrates text parsing, GUI development, and number conversion.
 
+![Main Window Screenshot](Screenshots/MainGUI.png)
+
 ## __Features:__
 - Convert numbers in text to their numeric equivalents (ex. "Five" → [5]).
+  
+  ![Text to Number Screenshot](Screenshots/TextToNumber.png)
+
 - Convert numeric values into text (ex. [5] → "Five").
+  
+   ![Text to Number Screenshot](Screenshots/NumberToText.png)
+
 - Simple GUI built with Tkinter for an interactive user experience.
 - Handles numbers ranging from 0 to 999,999,999.
 - Can be compiled into an executable file (.exe) for easy distribution.
+- Displays user errors when incorrect values are entered.
+  
+  ![Error Message 2 Screenshot](Screenshots/ErrorMessage2.png)
 
 ## __Installation__
 
@@ -34,11 +45,8 @@ __**Number to Text Conversion**__
   2. Click the "Convert to Text" button to see the written form (e.g., "One hundred and two").
 
 ## __5. License__
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## __6. Screenshots__
-Screenshots of the program.
-
-## __7. Credits__
+## __6. Credits__
 __**Written by: Nathan Dubeau**__
 
